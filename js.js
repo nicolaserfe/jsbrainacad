@@ -460,7 +460,7 @@ function createGreeting(greeting) {
   }
 }
 var sayHi = createGreeting('Hi');
+sayHi = ('Bob');
 //var sayHi = function (name) {
 //  console.log(`${greeting}, $(name)`);
 //}
-sayHi = ('Bob');

@@ -412,9 +412,12 @@ function order(str) {
 }
 
 console.log(order(str));
-*/
+
+
+ //sasha nareshal
 function getNumberFromString(str) {
   return str.match(/\d+/g);
+ 
 }
 
 function orderWords(inputStr) {
@@ -430,3 +433,34 @@ function orderWords(inputStr) {
 var result = orderWords('Bri777tain Londo1n i2s c4apital Gre6at t3he o5f ')
 
 alert(result);
+
+
+
+
+// zamikanie
+
+function idGenerator() {
+  var id = 1;
+  return function () {
+    return id++;
+  }
+}
+
+var nextId = idGenerator();
+console.log(nextId());
+console.log(nextId());
+console.log(nextId());
+console.log(nextId());
+
+*/
+
+function createGreeting(greeting) {
+  return function (name) {
+    console.log('$ {greeting}, $ {name}');
+  }
+}
+var sayHi = createGreeting('Hi');
+//var sayHi = function (name) {
+//  console.log(`${greeting}, $(name)`);
+//}
+sayHi = ('Bob');

@@ -404,11 +404,50 @@ function reverseString(string) {
   return string.split('').reverse().join('');
 }
 console.log(reverseString(str));
-*/
-var str = "на18с свяще8нным и14 све4те нравс15твенный напо5лняют м6ою вещ2и ду7шу на12д трепе9том н3а не11бо головой13 зак16он звё10здное Д1ве внут17ри";
 
-function order(str) {
-  var res = str.split(' ').sortNumber(a - b).join('  ');
+
+//function callback olololololololo caaallllll fuuuucking baaack
+
+var allFriends = ["Mike", "Ann", "Helen", "Bob"];
+
+function greetFriends(friends) {
+  for (var i = 0; i < friends.length; i++) {
+    console.log('Hello,', friends[i]);
+  }
 }
 
-console.log(order(str));
+function greet(friend) {
+  console.log('Hello, ' + friend);
+}
+greetFriends(allFriends);
+
+//same
+
+var allFriends = ["Mike", "Ann", "Helen", "Bob"];
+
+function greetFriends(friends) {
+  for (var i = 0; i < friends.length; i++) {
+    greet(friends[i]);
+  }
+}
+
+function greet(friend) {
+  console.log('Hello, ' + friend);
+}
+greetFriends(allFriends);
+*/
+
+
+function getUserInput(firstName, lastName, gender, callback) {
+  var name = firstName + lastName;
+  callback(name, gender);
+
+}
+
+
+function genericPoemMaker(name, gender) {
+  console.log(name + " text ");
+  console.log("A " + gender + " text ");
+}
+
+getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);

@@ -404,7 +404,7 @@ function reverseString(string) {
   return string.split('').reverse().join('');
 }
 console.log(reverseString(str));
-*/
+
 var str = "на18с свяще8нным и14 све4те нравс15твенный напо5лняют м6ою вещ2и ду7шу на12д трепе9том н3а не11бо головой13 зак16он звё10здное Д1ве внут17ри";
 
 function order(str) {
@@ -412,3 +412,21 @@ function order(str) {
 }
 
 console.log(order(str));
+*/
+function getNumberFromString(str) {
+  return str.match(/\d+/g);
+}
+
+function orderWords(inputStr) {
+  var words = inputStr.split(' ');
+
+  var sortedWords = words.sort(function (a, b) {
+    return getNumberFromString(a) - getNumberFromString(b);
+  });
+
+  return sortedWords.join(' ');
+}
+
+var result = orderWords('Bri777tain Londo1n i2s c4apital Gre6at t3he o5f ')
+
+alert(result);

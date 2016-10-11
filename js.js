@@ -438,9 +438,9 @@ sayHi('rick');
 //var sayHi = function (name) {
 //  console.log(`${greeting}, $(name)`);
 //}
-*/
 
-//function callback olololololololo caaallllll fuuuucking baaack
+
+//function callback olololololololo caaallllll fuuuucking baaack caalllllbaaackkk
 
 var allFriends = ["Mike", "Ann", "Helen", "Bob"];
 
@@ -484,3 +484,34 @@ function genericPoemMaker(name, gender) {
 }
 
 getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
+
+*/
+
+
+
+
+var arr = [1, 22, -44, 53, -12, 78, -14, 68];
+
+//arr.forEach(function (elem, i) {
+//  console.log(`there is ${elem} on the ${i} position`);
+//  console.log(arr);
+//});
+//var newArray = arr.filter(function (elem) {
+//  return elem > 0;
+//});
+//
+//console.log(newArray);
+
+
+
+var arr2 = [1, 4, 5, 9, 55, 8, 81, 25, 87, 9];
+
+var newArr = arr2.filter(function (elem) {
+
+  if (Math.sqrt(elem) === Math.ceil(Math.sqrt(elem))) {
+    return true;
+  }
+
+
+})
+console.log(newArr);

@@ -406,6 +406,40 @@ function reverseString(string) {
 console.log(reverseString(str));
 
 
+
+
+// zamikanie
+
+function idGenerator() {
+  var id = 1;
+  return function () {
+    return id++;
+  }
+}
+
+var nextId = idGenerator();
+console.log(nextId());
+console.log(nextId());
+console.log(nextId());
+console.log(nextId());
+
+
+
+function createGreeting(greeting) {
+  return function (name) {
+    console.log(`${greeting}, ${name}`);
+  }
+}
+var sayHi = createGreeting('Hi');
+console.log(sayHi);
+sayHi('lol');
+sayHi('kkk');
+sayHi('rick');
+//var sayHi = function (name) {
+//  console.log(`${greeting}, $(name)`);
+//}
+*/
+
 //function callback olololololololo caaallllll fuuuucking baaack
 
 var allFriends = ["Mike", "Ann", "Helen", "Bob"];
@@ -434,8 +468,7 @@ function greetFriends(friends) {
 function greet(friend) {
   console.log('Hello, ' + friend);
 }
-greetFriends(allFriends);
-*/
+greetFriends(allFriends); * /
 
 
 function getUserInput(firstName, lastName, gender, callback) {

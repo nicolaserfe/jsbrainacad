@@ -485,12 +485,12 @@ function genericPoemMaker(name, gender) {
 
 getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 
+
+
 */
 
 
-
-
-var arr = [1, 22, -44, 53, -12, 78, -14, 68];
+//var arr = [1, 22, -44, 53, -12, 78, -14, 68];
 
 //arr.forEach(function (elem, i) {
 //  console.log(`there is ${elem} on the ${i} position`);
@@ -504,14 +504,174 @@ var arr = [1, 22, -44, 53, -12, 78, -14, 68];
 
 
 
-var arr2 = [1, 4, 5, 9, 55, 8, 81, 25, 87, 9];
+//var arr2 = [1, 4, 5, 9, 55, 8, 81, 25, 87, 9];
+//
+//var newArr = arr2.filter(function (elem) {
+//
+//  if (Math.sqrt(elem) === Math.ceil(Math.sqrt(elem))) {
+//    return true;
+//  }
+//
+//});
+//console.log(newArr);
+//
+//var arr = [1, 2, 3, 4, 5];
+//
+//var newArray = arr.map(function (number) {
+//  return Math.pow(number, 3);
+//});
+//
+//console.log(newArray);
+//
+//
+//var arr2 = ['this', 'is', 'halloween'];
+//
+//var newArray2 = arr2.map(function (word) {
+//  return word.length;
+//});
+//
+//console.log(newArray2);
 
-var newArr = arr2.filter(function (elem) {
-
-  if (Math.sqrt(elem) === Math.ceil(Math.sqrt(elem))) {
-    return true;
-  }
 
 
-})
-console.log(newArr);
+//var str = 'London is the capital if Great Britain';
+
+//var arrStr = str.split('');
+//
+//var res = arrStr.map(function (letter, index) {
+//
+//  if (letter == letter.toUpperCase() && letter !== ' ') return index;
+//});
+//
+//
+//
+//var finish = res.filter(function (letter, index) {
+//  if (letter !== undefined) return true;
+//});
+//
+//
+//console.log(finish);
+
+//
+//var arr = [4, 76, 89, 9, 12, -5, -18];
+//
+//var resOfevery = arr.every(function (num) {
+//  return num > 0;
+//});
+//console.log(resOfevery);
+//
+//var resOfsome = arr.some(function (num) {
+//  return num > 0;
+//});
+//console.log(resOfsome);
+//
+//
+//
+//var arr = ['apple', 'orange', 'banana', 'lemon'];
+//arr.reduce(function (previous, current, i) {
+//  console.log(i + ':', previous, current);
+//
+//  return current;
+//});
+//
+
+
+//var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+//
+//var res = arr.reduce(function (previous, current, i) {
+//  return previous + current;
+//}, 10);
+//
+//console.log(res);
+
+
+//
+//
+//var arr = ['one', 'two', 'three'];
+//
+//var res = arr.reduce(function (previous, current, i) {
+//  return previous + current.split('').reverse().join('');
+//}, '');
+//
+//console.log(res);
+
+
+
+//var arr = [32, 4, -5, 78, -55, 11];
+//
+//var res = arr.reduce(function (previous, current) {
+//  if (current > previous) {
+//    return current;
+//  } else {
+//    return previous;
+//  }
+//});
+//console.log(res);
+
+//
+//var arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+//
+//var res = arr.reduce(function (prev, curr) {
+//  return prev.concat(curr);
+//});
+//
+//console.log(res);
+
+
+
+
+//
+//var obj = {
+//  value: 5,
+//  sayHi: function () {
+//    console.log('hi');
+//  }
+//};
+//obj.sayHi();
+
+
+
+
+//function Planet(name, water) {
+//  this.name = name;
+//  this.isWaterPresent = water;
+//};
+//var earth = new Planet('Earth', true);
+//var mars = new Planet('Mars', false);
+//Planet.prototype.form = 'round';
+//Planet.prototype.isInhabitable = function () {
+//  return this.isWaterPresent;
+//};
+////{
+////  name: 'Earth',
+////  radius = 1000;
+////}
+//
+//console.log(earth);
+//console.log(earth.form);
+//console.log(earth.isInhabitable());
+//
+//console.log(mars);
+//console.log(mars.form);
+//console.log(mars.isInhabitable());
+
+
+
+//Object.prototype.sayHi = function () {
+//  console.log('hi');
+//}
+//
+//var a = {};
+//var b = 5;
+//a.sayHi();
+//b.sayHi();
+//console.log(a);
+
+
+var arr = [1, 2, 3];
+
+var prot = Object.getPrototypeOf(arr);
+console.log(prot);
+
+var prot2 = Object.getPrototypeOf(prot);
+console.log(prot2);

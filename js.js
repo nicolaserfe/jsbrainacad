@@ -631,7 +631,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 
 
 
-
 //function Planet(name, water) {
 //  this.name = name;
 //  this.isWaterPresent = water;
@@ -668,10 +667,108 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //console.log(a);
 
 
-var arr = [1, 2, 3];
+//var arr = [1, 2, 3];
+//
+//var prot = Object.getPrototypeOf(arr);
+//console.log(prot);
+//
+//var objPrototype = Object.getPrototypeOf(prot);
+//console.log(objPrototype);
+//
+//var matrix = {
+//  year: 1996,
+//  genre: 'fantactis'
+//};
+//
+//var movie = {
+//  getYear: function () {
+//    return this.year;
+//  },
+//  getGenre: function () {
+//    return this.genre;
+//
+//  }
+//};
+//Object.setPrototypeOf(matrix, movie);
+//
+//console.log(matrix.getYear());
 
-var prot = Object.getPrototypeOf(arr);
-console.log(prot);
+//
+function Car(brand, country) {
+  this.brand = brand;
+  this._country = country;
+};
 
-var prot2 = Object.getPrototypeOf(prot);
-console.log(prot2);
+Car.prototype.getBrand = function () {
+  return this.brand;
+};
+Car.prototype.country = function () {
+  return this._country;
+};
+
+var smart = new Car('smart', 'unknown');
+var audi = new Car('audi', 'hz');
+var bmw = new Car('bmw', 'germany?');
+
+console.log(smart.getBrand());
+console.log(smart.country());
+console.log(audi.getBrand());
+
+console.log(bmw.getBrand());
+
+
+//
+var arr = [11, 3, 11, 11];
+
+var res = a1.map(function (elem, i) {
+  return elem * elem;
+});
+
+console.log(res);
+
+
+var unic = arr.reduce(function (prev, curr) {
+  if (arr.indexOf(prev) === arr.lastIndexOf(prev)) {
+    return prev;
+  } else {
+    return curr;
+  }
+});
+
+console.log(unic);
+
+
+var objects = [
+  {
+    name: 'kate',
+    pass: '123'
+  },
+  {
+    name: 'ann',
+    pass: '124'
+  },
+  {
+    name: 'mary',
+    pass: '133'
+  },
+  {
+    name: 'jane',
+    pass: '125'
+  },
+];
+
+var deleted = objects.map(function (elem) {
+  delete elem.pass;
+  return elem;
+})
+
+console.log(deleted);
+//
+//
+//
+//var a1 = [1, 3, -4, -9, 6, , 5, -8, 4, 2];
+//
+//var result = a1.filter(function (elem, i) {
+//  return elem % 2 === 0 && elem > 0;
+//});
+//console.log(result);

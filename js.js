@@ -454,13 +454,75 @@ console.log(nextId());
 
 */
 
-function createGreeting(greeting) {
-  return function (name) {
-    console.log('$ {greeting}, $ {name}');
-  }
-}
-var sayHi = createGreeting('Hi');
-sayHi = ('Bob');
+//function createGreeting(greeting) {
+//  return function (name) {
+//    console.log(`${greeting}, ${name}`);
+//  }
+//}
+//var sayHi = createGreeting('Hi');
+//console.log(sayHi);
+//sayHi('lol');
+//sayHi('kkk');
+//sayHi('rick');
 //var sayHi = function (name) {
 //  console.log(`${greeting}, $(name)`);
 //}
+
+//var string = "we like to learn javascript";
+//var b = string.match(/javascript/);
+//
+//console.log(b);
+//
+//
+//var string = "we like to learn javascript";
+//var res = /like/.test(string);
+//
+//console.log(res);
+//
+//
+//var str = 'I like oranges and orange juice';
+//var regexp = /orange/;
+//var result;
+//
+//while (result = regexp.exec(str)) {
+//  console.log(result);
+//  console.log(result.indexOf);
+//  console.log(result.lastIndexOf);
+//}
+//
+//console.log(result);
+
+
+
+//
+//function countletters(string) {
+//
+//  return {
+//    lowercase: string.match(/a-z/g).length,
+//    uppercase: string.match(/A-Z/g).length
+//  }
+//
+//}
+//var test = 'Sometimes I';
+//var res = countletters(test);
+//console.log(res);
+
+
+
+
+//var person = 'John Smith';
+//var result = person.replace(/(\w+) (\w+)/, '$2 $1');
+//var res = s.replace(/cats/g, 'dogs');
+
+var s = "I like cats           but cats don't         like    me back";
+var result = s.split(/\s+/).join(' ');
+console.log(result);
+
+
+var str2 = 'one, two , three , four,five ,six';
+
+var res = str2.split(/\s*,\s*/).join(', ');
+var res2 = str2.replace(/\s*,\s*/g, ', ');
+
+console.log(res);
+console.log(res2);

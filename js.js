@@ -514,15 +514,182 @@ console.log(nextId());
 //var result = person.replace(/(\w+) (\w+)/, '$2 $1');
 //var res = s.replace(/cats/g, 'dogs');
 
-var s = "I like cats           but cats don't         like    me back";
-var result = s.split(/\s+/).join(' ');
-console.log(result);
+//var s = "I like cats           but cats don't         like    me back";
+//var result = s.split(/\s+/).join(' ');
+//console.log(result);
+//
+//
+//var str2 = 'one, two , three , four,five ,six';
+//
+//var res = str2.split(/\s*,\s*/).join(', ');
+//var res2 = str2.replace(/\s*,\s*/g, ', ');
+//
+//console.log(res);
+//console.log(res2);
+
+//var = timeout;
+//
+//function outer() {
+//  console.log('outer start');
+//  inner();
+//  console.log('outer finish');
+//}
+//
+//function inner() {
+//  console.log('inner');
+//  setTimeout(function () {
+//    innermost(1);
+//    clearTimeout(timeout);
+//    set
+//  }, 1000);
+//  setTimeout(function () {
+//    innermost(2);
+//  }, 1000);
+//}
+//
+//function innermost() {
+//  console.log('innermost');
+//}
+//
+//outer();
+
+//function test(num) {
+//  console.log('current value:', num);
+//  this.counter++;
+//
+//}
+//
+//test.counter = 0;
+//
+//for (var i = 0; i < 5; i++) {
+//  test.call(test, i);
+//}
+//
+//console.log(test.counter);
 
 
-var str2 = 'one, two , three , four,five ,six';
+//function foo() {
+//  var a = 2;
+//  this.bar();
+//}
+//
+//function bar() {
+//  console.log(this.a);
+//}
+//foo();
+//
+//function foo() {
+//  console.log('foo');
+//  bar();
+//}
+//
+//function bar() {
+//  console.log('bar');
+//  test();
+//}
+//
+//function test() {
+//  console.log('test');
+//
+//}
+//
+//foo();
+//
+//function test() {
+//  console.log(this.a);
+//}
+//var a = 2;
+//test();
 
-var res = str2.split(/\s*,\s*/).join(', ');
-var res2 = str2.replace(/\s*,\s*/g, ', ');
+//
+//var obj = {
+//  a: 5;
+//  showA: function () {
+//    console.log(this.a);
+//  }
+//}
+//
+//obj.showA();
 
-console.log(res);
-console.log(res2);
+//
+//var obj = {
+//  smth: true,
+//  number: 5,
+//  anotherObject: {
+//    anotherValue: 'some text'
+//  }
+//}
+//console.log(obj);
+
+//function foo(){
+//  console.log (this.a);
+//}
+//
+//var obj2 = {
+//  a:42,
+//  foo:foo
+//};
+//
+//var obj1 ={
+//  a:2,
+//  obj2:obj2
+//};
+//
+//obj1.obj2.foo ();
+//
+//function foo() {
+//  console.log(this.a);
+//}
+//
+//var a = "global";
+//var obj = {
+//    a: 5
+//  }
+//  //foo();
+//  //foo.call(obj);
+//var hardBinding = function () {
+//  foo.call(obj); //смотрит на obj, a ne na window
+//}
+//hardBinding();
+//setTimeout(hardBinding, 1000);
+
+//function foo(a, b, c) {
+//  console.log(a, b, c);
+//}
+//var obj = {};
+//foo.call(obj, 1, 2, 3);
+//
+//foo.apply(obj, [1, 2, 3]);
+
+
+//function foo() {
+//  var arr = Array.prototype.slice.apply(arguments, [1, 4]);
+//  console.log(arr);
+//}
+//
+//foo(1, 2, 3, 4, 5);
+
+
+//var min = Math.min(2, 5, -13, 14);
+//var arr2 = Math.min.apply(min, [2, 5, -13, 14]);
+//console.log(arr2);
+
+//var res = [1, 2, 3, 4].map(function (elem, i) {
+//  return elem * elem;
+//});
+
+
+
+Array.prototype.myMap = function (callback) { //функция колбэк, которую задаст пользователь
+  var arr = this.slice(); //скопировали this - в новый массив, чтобы не изменять исходный массив
+  for (var i = 0; i < arr.length; i++) {
+    arr[i] = callback(arr[i], i); //перебираем все элементы и создаем элемент this(arr)[i], вызывая функцию колбэк (которую задаст пользователь), обращаясь к элементам i((arr)this[i]-обращение к элементам массива (arr)this) таким образом мы обращаемся к каждому элементу и вызываем на нем функцию колбэк - и возвращаем (arr) this - массив с которым мы изначально работали
+  }
+  return this;
+};
+
+var w = [1, 5, 8].myMap(function (elem, i) {
+  return elem * elem;
+});
+
+console.log(w);

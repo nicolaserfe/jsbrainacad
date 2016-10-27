@@ -679,17 +679,89 @@ console.log(nextId());
 //});
 
 
+//
+//Array.prototype.myMap = function (callback) { //функция колбэк, которую задаст пользователь
+//  var arr = this.slice(); //скопировали this - в новый массив, чтобы не изменять исходный массив
+//  for (var i = 0; i < arr.length; i++) {
+//    arr[i] = callback(arr[i], i); //перебираем все элементы и создаем элемент this(arr)[i], вызывая функцию колбэк (которую задаст пользователь), обращаясь к элементам i((arr)this[i]-обращение к элементам массива (arr)this) таким образом мы обращаемся к каждому элементу и вызываем на нем функцию колбэк - и возвращаем (arr) this - массив с которым мы изначально работали
+//  }
+//  return this;
+//};
+//
+//var w = [1, 5, 8].myMap(function (elem, i) {
+//  return elem * elem;
+//});
+//
+//console.log(w);
+//
 
-Array.prototype.myMap = function (callback) { //функция колбэк, которую задаст пользователь
-  var arr = this.slice(); //скопировали this - в новый массив, чтобы не изменять исходный массив
-  for (var i = 0; i < arr.length; i++) {
-    arr[i] = callback(arr[i], i); //перебираем все элементы и создаем элемент this(arr)[i], вызывая функцию колбэк (которую задаст пользователь), обращаясь к элементам i((arr)this[i]-обращение к элементам массива (arr)this) таким образом мы обращаемся к каждому элементу и вызываем на нем функцию колбэк - и возвращаем (arr) this - массив с которым мы изначально работали
+//function foo(something) {
+//  console.log(this.a);
+//  //return this.a + arguments[0];
+//};
+//
+//var obj = {
+//  a: 2
+//};
+//
+//var bar = function () {
+//  //argument
+//  return foo.apply(obj, arguments); //explicit binding привязываем ыункцию к обежекту с привязанными аргументами helper-function binding to only one object and function. we can write universal function for this shit - foo.bind(obj)
+//};
+//
+//var b = bar(3);
+//console.log(b); //теряется привязка из-за присвоения функции в переменную;
+
+
+//function Warrior(name) {
+//  this.name = name;
+//  this.health = 100;
+//}
+//
+//var warrior = new Warrior('Cat'); //cтрока пушо имя - это строка
+//var anotherWarrior = new Warrior('Dog');
+//
+//
+//Warrior.prototype.hit = function (anotherWarrior) {
+//  anotherWarrior.health -= Math.floor(Math.random() * anotherWarrior.health) //-= вычитание из свойства объекта случайного числа Math.random() округленного в меньшую сторону Math.floor. число вариативно от остатка в свойстве cat.health
+//};
+//
+////console.log(dog); //вызываем объект
+////cat.hit(dog); //вызываем свойство на объекте
+////console.log(dog);
+////dog.hit(cat);
+////console.log(cat);
+//
+//function battle(warrior1, warrior2) {
+//  warrior.hit(anotherWarrior); //очередность действий в функции с новой строчки
+//  anotherWarrior.hit(warrior);
+//  if (warrior.health > anotherWarrior.health) {
+//    return warrior.name;
+//  } else {
+//    return anotherWarrior.name;
+//  }
+//}
+//
+//console.log(battle(warrior, anotherWarrior));
+
+
+function createMessage(string) { //объявить
+  if (string) {
+    createMessage.res = createMessage.res + string + ' ';
+    return createMessage;
+
+  } else {
+    var res = createMessage.res;
+    createMessage.res = ''
+    return res;
   }
-  return this;
-};
+}
+createMessage.res = '';
+var sss = createMessage('hello ')('world')('nobody ')('cares')(); //вызвать
+var sjh = createMessage('rrrrrf ')('uhiugui')();
+var ttt = createMessage('vvv ')('eee')('ddd')()
 
-var w = [1, 5, 8].myMap(function (elem, i) {
-  return elem * elem;
-});
 
-console.log(w);
+console.log(sss);
+console.log(sjh);
+console.log(ttt);

@@ -488,10 +488,7 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 
 
 */
-
-
 //var arr = [1, 22, -44, 53, -12, 78, -14, 68];
-
 //arr.forEach(function (elem, i) {
 //  console.log(`there is ${elem} on the ${i} position`);
 //  console.log(arr);
@@ -501,9 +498,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //});
 //
 //console.log(newArray);
-
-
-
 //var arr2 = [1, 4, 5, 9, 55, 8, 81, 25, 87, 9];
 //
 //var newArr = arr2.filter(function (elem) {
@@ -531,11 +525,7 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //});
 //
 //console.log(newArray2);
-
-
-
 //var str = 'London is the capital if Great Britain';
-
 //var arrStr = str.split('');
 //
 //var res = arrStr.map(function (letter, index) {
@@ -551,7 +541,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //
 //
 //console.log(finish);
-
 //
 //var arr = [4, 76, 89, 9, 12, -5, -18];
 //
@@ -574,8 +563,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //  return current;
 //});
 //
-
-
 //var arr = [1, 2, 3, 4, 5, 6, 7, 8];
 //
 //var res = arr.reduce(function (previous, current, i) {
@@ -583,8 +570,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //}, 10);
 //
 //console.log(res);
-
-
 //
 //
 //var arr = ['one', 'two', 'three'];
@@ -594,9 +579,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //}, '');
 //
 //console.log(res);
-
-
-
 //var arr = [32, 4, -5, 78, -55, 11];
 //
 //var res = arr.reduce(function (previous, current) {
@@ -607,7 +589,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //  }
 //});
 //console.log(res);
-
 //
 //var arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 //
@@ -616,10 +597,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //});
 //
 //console.log(res);
-
-
-
-
 //
 //var obj = {
 //  value: 5,
@@ -628,9 +605,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //  }
 //};
 //obj.sayHi();
-
-
-
 //function Planet(name, water) {
 //  this.name = name;
 //  this.isWaterPresent = water;
@@ -653,9 +627,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //console.log(mars);
 //console.log(mars.form);
 //console.log(mars.isInhabitable());
-
-
-
 //Object.prototype.sayHi = function () {
 //  console.log('hi');
 //}
@@ -665,8 +636,6 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //a.sayHi();
 //b.sayHi();
 //console.log(a);
-
-
 //var arr = [1, 2, 3];
 //
 //var prot = Object.getPrototypeOf(arr);
@@ -692,78 +661,77 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //Object.setPrototypeOf(matrix, movie);
 //
 //console.log(matrix.getYear());
-
+////
+//function Car(brand, country) {
+//  this.brand = brand;
+//  this._country = country;
+//};
 //
-function Car(brand, country) {
-  this.brand = brand;
-  this._country = country;
-};
-
-Car.prototype.getBrand = function () {
-  return this.brand;
-};
-Car.prototype.country = function () {
-  return this._country;
-};
-
-var smart = new Car('smart', 'unknown');
-var audi = new Car('audi', 'hz');
-var bmw = new Car('bmw', 'germany?');
-
-console.log(smart.getBrand());
-console.log(smart.country());
-console.log(audi.getBrand());
-
-console.log(bmw.getBrand());
-
-
+//Car.prototype.getBrand = function () {
+//  return this.brand;
+//};
+//Car.prototype.country = function () {
+//  return this._country;
+//};
 //
-var arr = [11, 3, 11, 11];
-
-var res = a1.map(function (elem, i) {
-  return elem * elem;
-});
-
-console.log(res);
-
-
-var unic = arr.reduce(function (prev, curr) {
-  if (arr.indexOf(prev) === arr.lastIndexOf(prev)) {
-    return prev;
-  } else {
-    return curr;
-  }
-});
-
-console.log(unic);
-
-
-var objects = [
-  {
-    name: 'kate',
-    pass: '123'
-  },
-  {
-    name: 'ann',
-    pass: '124'
-  },
-  {
-    name: 'mary',
-    pass: '133'
-  },
-  {
-    name: 'jane',
-    pass: '125'
-  },
-];
-
-var deleted = objects.map(function (elem) {
-  delete elem.pass;
-  return elem;
-})
-
-console.log(deleted);
+//var smart = new Car('smart', 'unknown');
+//var audi = new Car('audi', 'hz');
+//var bmw = new Car('bmw', 'germany?');
 //
+//console.log(smart.getBrand());
+//console.log(smart.country());
+//console.log(audi.getBrand());
+//
+//console.log(bmw.getBrand());
+//
+//
+////
+//var arr = [11, 3, 11, 11];
+//
+//var res = a1.map(function (elem, i) {
+//  return elem * elem;
+//});
+//
+//console.log(res);
+//
+//
+//var unic = arr.reduce(function (prev, curr) {
+//  if (arr.indexOf(prev) === arr.lastIndexOf(prev)) {
+//    return prev;
+//  } else {
+//    return curr;
+//  }
+//});
+//
+//console.log(unic);
+//
+//
+//var objects = [
+//  {
+//    name: 'kate',
+//    pass: '123'
+//  },
+//  {
+//    name: 'ann',
+//    pass: '124'
+//  },
+//  {
+//    name: 'mary',
+//    pass: '133'
+//  },
+//  {
+//    name: 'jane',
+//    pass: '125'
+//  },
+//];
+//
+//var deleted = objects.map(function (elem) {
+//  delete elem.pass;
+//  return elem;
+//})
+//
+//console.log(deleted);
+////
 //
 //
 //var a1 = [1, 3, -4, -9, 6, , 5, -8, 4, 2];
@@ -771,4 +739,233 @@ console.log(deleted);
 //var result = a1.filter(function (elem, i) {
 //  return elem % 2 === 0 && elem > 0;
 //});
+//
+//
+//                                                   multifilter
+//
 //console.log(result);
+//function multifilter() {
+//  var outerArguments = arguments;
+//  return function (el) {
+//    var result = true;
+//    for (i = 0; i < outerArguments.length; i++) {
+//      result = result && outerArguments[i](el);
+//    }
+//    return result;
+//  }
+//}
+//
+//function isEven(el) {
+//  return el % 2 === 0;
+//}
+//
+//function isGTTen(el) {
+//  return el > temp;
+//}
+//var result = [1, 2, 3, 4, 5, 10, 11, 12, 13, 14].filter(multifilter(isEven, isGTTen));
+//console.log(result);
+//console.log(numbers(1234));
+//
+//
+//
+//
+//
+//
+//
+//                                       IIFE
+//
+//var test = 5;
+////
+//(function myFunc(innerVar) {
+//  console.log('hello', innerVar)
+//})(test);
+//
+//for (var i = 1; i < 5; i++) {
+//
+//  (function myfunc(i) {
+//    setTimeout(function () { //setTimeout (function, timespan);
+//      console.log(i);
+//    }, 1000 * i);
+//  })(i);
+//
+//}
+//
+//
+//
+//var idGenerator = (function () {
+//  var id = 0;
+//
+//  function increment() {
+//    return id++;
+//  }
+//
+//  function reset() {
+//    id = 0;
+//  }
+//  return {
+//    increment: increment,
+//    reset: reset
+//  };
+//})();
+//console.log(idGenerator.increment());
+//console.log(idGenerator.increment());
+//console.log(idGenerator.increment());
+//console.log(idGenerator.reset());
+//
+//console.log(idGenerator.increment());
+//console.log(idGenerator.increment());
+//console.log(idGenerator.increment());
+//console.log(idGenerator.increment());
+//
+//function test() {                     //rekursiya
+//  test();
+////}
+////test();
+//
+//
+//function pow(x, p) {
+//  if (p === 1) {
+//    return x;
+//  } else {
+//    return x * pow(x, p - 1);
+//  }
+//}
+//var res = pow(2, 4);
+//console.log(res);
+//
+//
+//
+//function factorial(n) {
+//  if (n === 1) {
+//    return n;
+//  } else {
+//    return n * factorial(n - 1);
+//  }
+//}
+//var n = factorial(4)
+//console.log(n);
+//
+////
+////
+/////                                                      ERRORS
+//
+//
+//
+//
+//function MyOwnError(message) {
+//  this.name = 'MyOwnError';
+//  this.message = message;
+//  this.stack = (new Error).stack;
+//}
+//
+//function randomNumber() {
+//  if (Math.random() > 0.5) {
+//    return true;
+//  } else {
+//    throw new MyOwnError('value is too low');
+//  }
+//}
+////function foo() {
+////  bar();
+////}
+////
+////function bar() {
+////  JSON.parse('d');
+////}
+//try {
+//  randomNumber();
+//  foo();
+//  console.log(obj.value) // mistake obj is not defind will stop other code
+//} catch (error) {
+//  console.log(error.name);
+//  console.log(error.message); // try catch() - code will work after this
+//  console.log(error.stack)
+//} finally {
+//  console.log('hidden spiden');
+//}
+//
+//console.log('hi');
+////
+////
+////
+////
+//function primitiveMultiply(a, b) {
+//  if (Math.random() < 0.5) {
+//    return a * b;
+//  } else {
+//    throw new Error();
+//  }
+//}
+//
+//function reliableMultiply(a, b) {
+//
+//  try {
+//    return primitiveMultiply(a, b);
+//  } catch (Error) {
+//    console.log(Error.name)
+//    return reliableMultiply(a, b)
+//  }
+//
+//}
+//
+//
+//console.log(reliableMultiply(8, 2))
+
+
+
+//var arr1 = [1, 2, 3, 4, 5, 5, 6, 7, 7, 8];
+//var arr2 = [1, 11, 45, 110, 55, 23]
+//var sorted = arr2.sort(function (a, b) {
+//      //  if (a < b) {
+//    return -1;
+//  } else if (a > b) {  //   ==   return a-b;
+//    return 1;
+//  } else {
+//    return 0;
+//  }
+//});
+
+//
+//
+//var now = new Date();
+////year, month( 0-11), date, hour, minute
+//var then = new Date(2005, 6, 5);
+//console.log(now.getFullYear()); //getDay - 0-sunday, 1 - monday
+////
+////
+//
+
+
+//function getDayOfTheWeek(year, month, date) {
+//
+//
+//  var day = new Date(year, month - 1, date - 1);
+//  return ['m', 't', 'w', 'e', 'f', 's', 'h'][day.getDay()];
+//
+//
+//}
+//console.log(getDayOfTheWeek(2016, 11, 15));
+//
+//
+//
+//
+//var now = new Date();
+//now.setMinutes(55);
+//
+//console.log(now)
+
+
+
+
+
+console.time('myLabel');
+for (var i = 0; i < 100; i++) {
+  var a = i + i;
+}
+
+console.timeEnd('myLabel');
+
+
+var parsed = Date.parse('2016-11-15');
+var parsed2 = Date.parse('2016-11-16');
+console.log(parsed, parsed2);

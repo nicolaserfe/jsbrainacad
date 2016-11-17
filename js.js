@@ -953,19 +953,79 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //now.setMinutes(55);
 //
 //console.log(now)
+//
+
+
+
+//
+//console.time('myLabel');
+//for (var i = 0; i < 100; i++) {
+//  var a = i + i;
+//}
+//
+//console.timeEnd('myLabel');
+//
+//
+//var parsed = Date.parse('2016-11-15');
+//var parsed2 = Date.parse('2016-11-16');
+//console.log(parsed, parsed2);
+
+
+//                                TEST Shit
+//var o = {
+//    x: 8,
+//    valueOf: function () {
+//      return this.x + 2;
+//    },
+//    toString: function () {
+//      return this.x.toString();
+//    }
+//  },
+//  result = o < "9";
+//console.log(result);
+
+
+
+//var res = (function f() {
+//  function f() {
+//    return 1;
+//  }
+//  return f();
+//
+//  function f() {
+//    return 2;
+//  }
+//})();
+//console.log(res);
+
+
+////////////////////////////// test shit ssssss
+
+
+////////////////////////////////         DOM
+
+
+console.log(document);
+
+
+var myDiv = document.getElementById('main');
+var myParagraphs = document.getElementsByClassName('catalog');
+console.log(myDiv);
+console.log(myParagraphs);
+
+
+var myNameInForm = document.getElementsByTagName('form');
+var res = document.getElementsByName('data')
+console.log(res);
 
 
 
 
-
-console.time('myLabel');
-for (var i = 0; i < 100; i++) {
-  var a = i + i;
-}
-
-console.timeEnd('myLabel');
+var a = document.getElementById('main');
+console.log(a.getAttribute('class'));
 
 
-var parsed = Date.parse('2016-11-15');
-var parsed2 = Date.parse('2016-11-16');
-console.log(parsed, parsed2);
+
+setTimeout(function () {
+  document.getElementsByClassName('button')[0].setAttribute('disabled', 'true')
+}, 2000);

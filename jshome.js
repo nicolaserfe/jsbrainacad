@@ -1,7 +1,20 @@
-function filter(Array) {
-  for (i = 0; i < arr.length; i++) {
-    while (arr[i] == true) {
-      var filered = Array.push;
-    }
-  }
-}
+//function multifilter() {
+//  var outerArguments = arguments;
+//  return function (el) {
+//    var result = true;
+//    for (var i = 0; i < outerArguments.length; i++) {
+//      result = result && outerArguments[i](el);
+//    }
+//    return result;
+//  }
+//}
+//
+//function isEven(el) {
+//  return el % 2 === 0;
+//}
+//
+//function isGTTen(el) {
+//  return el > 10;
+//}
+//var result = [1, 2, 3, 4, 5, 10, 11, 12, 13, 14].filter(multifilter(isEven, isGTTen));
+//console.log(result);

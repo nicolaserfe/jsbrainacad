@@ -1,0 +1,33 @@
+#block {
+  outline: solid 1px black;
+  width: 220px;
+  height: 220px;
+  margin-bottom: 20px;
+}
+
+#btn {}
+
+.topRight {
+  right: 0;
+  top: 0;
+}
+
+.rigthtBottom {
+  bottom: 0;
+  right: 0
+}
+
+.bottomLeft {
+  left: 0;
+  bottom: 0;
+}
+
+.topLeft {
+  top: 0;
+  left: 0;
+}
+
+.blocks {
+  outline: solid 1px black;
+  padding-left: 3px;
+}

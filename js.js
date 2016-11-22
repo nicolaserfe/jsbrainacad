@@ -1005,27 +1005,96 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 ////////////////////////////////         DOM
 
 
-console.log(document);
+//console.log(document);
+//
+//
+//var myDiv = document.getElementById('main');
+//var myParagraphs = document.getElementsByClassName('catalog');
+//console.log(myDiv);
+//console.log(myParagraphs);
+//
+//
+//var myNameInForm = document.getElementsByTagName('form');
+//var res = document.getElementsByName('data')
+//console.log(res);
+//
+//
+//
+//
+//var a = document.getElementById('main');
+//console.log(a.getAttribute('class'));
+//
+//
+//
+//setTimeout(function () {
+//  document.getElementsByClassName('button')[0].setAttribute('disabled', 'true')
+//}, 2000);
+
+//var button = document.getElementById('btn');
+//var a = document.getElementById('block');
+//a.style.backgroundColor = 'green';
+//a.addEventListener('click', toTheTopRight);
+//
+//var clicks = 0;
+//var pos = ['topLeft', 'topRight', 'rigthtBottom', 'bottomLeft', ]
+//
+//function toTheTopRight() {
+//  a.classList.remove(pos[clicks % pos.length]);
+//  clicks++;
+//  a.classList.add(pos[clicks % pos.length]);
+//
+//}
 
 
-var myDiv = document.getElementById('main');
-var myParagraphs = document.getElementsByClassName('catalog');
-console.log(myDiv);
-console.log(myParagraphs);
-
-
-var myNameInForm = document.getElementsByTagName('form');
-var res = document.getElementsByName('data')
-console.log(res);
+//
+//var button = document.getElementById('btn');
+//button.addEventListener('click', mouseClick)
 
 
 
+//var divs = document.getElementsByClassName('blocks');
+//var divsArray = Array.prototype.slice.call(divs);
+//
+//
+//divsArray.forEach(function (elem) {
+//  elem.addEventListener('click', mouseHandler, true)
+//})
+//
+//function mouseHandler(event) {
+//  console.log(event.target);
+//  console.log(event.currentTarget);
+//}
+var obj = {
+  value: '',
+  setValue: function (newValue) {
+    this.value = newValue;
+  }
+};
+obj.setValue('123');
+console.log(obj.value);
 
-var a = document.getElementById('main');
-console.log(a.getAttribute('class'));
+
+//var myInput = document.getElementById('myInput');
+//myInput.addEventListener('input', handler);
+//
+//function handler() {
+//  console.log(this.value);
+// console.log(myInput.value); // === this.value - same shit without previous iteration
+//}
+
+var newInput = document.getElementById('myInput');
+
+myInput.addEventListener('input', inputHandler);
 
 
 
-setTimeout(function () {
-  document.getElementsByClassName('button')[0].setAttribute('disabled', 'true')
-}, 2000);
+var inputHandler = {
+  message: 'Wake up, Neo...',
+  currentPosition: 0,
+  getLetter: function (e) {
+    e.target.value = this.message.slice(0, ++this.currentPosition);
+  }
+
+}
+
+newInput.addEventListener('input', inputHandler.getLetter.bind(inputHandler));

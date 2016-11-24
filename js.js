@@ -934,6 +934,41 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 ////
 ////
 //
+//////////////////////////////////////////////MULTIFILTER
+//function multifilter() {
+//  var outerArguments = arguments;
+//  return function (el) {
+//    var result = true;
+//    for (var i = 0; i < outerArguments.length; i++) {
+//      result = result && outerArguments[i](el);
+//    }
+//    return result;
+//  }
+//}
+////function multifilter() {
+////var allFilters = Array.prototype.slice.call(arguments);
+////return function (el) {
+////  var key = true;
+////  allFilters.forEach(function (filterFunction) {
+////    if (!filterFunction(n)) {
+////      key = false;
+////    }
+////  });
+////  return key;
+////}
+////}
+//
+//function isEven(el) {
+//  return el % 2 === 0;
+//}
+//
+//function isGTTen(el) {
+//  return el > temp;
+//}
+//var result = [1, 2, 3, 4, 5, 10, 11, 12, 13, 14].filter(multifilter(isEven, isGTTen));
+//console.log(result);
+
+
 
 
 //function getDayOfTheWeek(year, month, date) {
@@ -1063,15 +1098,15 @@ getUserInput('nicolas', 'erfe', 'f', genericPoemMaker);
 //function mouseHandler(event) {
 //  console.log(event.target);
 //  console.log(event.currentTarget);
-//}
-var obj = {
-  value: '',
-  setValue: function (newValue) {
-    this.value = newValue;
-  }
-};
-obj.setValue('123');
-console.log(obj.value);
+////}
+//var obj = {
+//  value: '',
+//  setValue: function (newValue) {
+//    this.value = newValue;
+//  }
+//};
+//obj.setValue('123');
+//console.log(obj.value);
 
 
 //var myInput = document.getElementById('myInput');
@@ -1082,19 +1117,113 @@ console.log(obj.value);
 // console.log(myInput.value); // === this.value - same shit without previous iteration
 //}
 
-var newInput = document.getElementById('myInput');
+//var newInput = document.getElementById('myInput');
+//
+//myInput.addEventListener('input', inputHandler);
+//
+//
+//
+//var inputHandler = {
+//  message: 'Wake up, Neo...',
+//  currentPosition: 0,
+//  getLetter: function (e) {
+//    e.target.value = this.message.slice(0, ++this.currentPosition);
+//  }
+//
+//}
+//
+//newInput.addEventListener('input', inputHandler.getLetter.bind(inputHandler));
+//
+//
+//
+/////////////////////////////////////////////////////////////////////////////////24 november
 
-myInput.addEventListener('input', inputHandler);
+var list = document.getElementById('list');
+list.addEventListener('click', handler);
 
-
-
-var inputHandler = {
-  message: 'Wake up, Neo...',
-  currentPosition: 0,
-  getLetter: function (e) {
-    e.target.value = this.message.slice(0, ++this.currentPosition);
-  }
-
+function handler(event) {
+  console.log(event.target.getAttribute('data-item'));
+  console.log(event.currentTarget.getAttribute('data-item'));
 }
 
-newInput.addEventListener('input', inputHandler.getLetter.bind(inputHandler));
+var newLi = document.createElement('li');
+//var text = document.createTextNode('new li');
+//
+//newLi.appendChild(text);
+newLi.innerHTML = '<h3>my new li</h3>';
+
+list.appendChild(newLi);
+
+newLi.setAttribute('data-item', 'newItem');
+
+list.insertBefore(newLi, list.children[0]);
+
+
+
+
+//var img = document.getElementById('image');//////////////Delete
+//img.addEventListener('click', function () {
+//  img.parentElement.removeChild(img)
+//});
+
+//img.addEventListener('click', function () {///////////////replace
+//  src = "../jsbrainacad/1280px-Star_Wars_Logo.svg.png"
+//});
+//
+//
+///////////////////////////////////////////////////////////MOVING
+//var imgLeft = document.getElementById('source');
+//var imgRight = document.getElementById('target');
+//var image = document.getElementById('image');
+//
+//imgLeft.addEventListener('click', function () {
+//  //imgLeft.removeChild(image);
+//  imgRight.appendChild(image.cloneNode(true));
+//});
+//////////////////////////////////////////////////////////////6*7=
+//var source = document.getElementById('source');
+//var value = source.firstChild.nodeValue.trim();
+//var numbers = value.match(/[0-9]/g);
+//
+//var answer = document.createTextNode(numbers[0] * numbers[1])
+//source.appendChild(answer);
+/////////////////////////////////////////////////////////////add text
+//num.addEventListener('click', math);
+//
+//function math(event) {
+//
+//  var text = document.createTextNode('13');
+//  num.appendChild(text);
+//}
+
+function sizedLetters(word, id) {
+  var text = document.getElementById('text');
+  var fontSize = 16;
+  word.split('').forEach(function (letter, i) {
+    var newSpan = document.createElement('span');
+    newSpan.innerHTML = letter;
+    newSpan.style.fontSize = fontSize + 'px';
+    text.appendChild(newSpan);
+    fontSize = (i < word.length / 2 - 1) ? fontSize + 5 : fontSize - 5;
+  });
+}
+sizedLetters('whatever', 'text')
+
+//var text = document.getElementById('text');
+//
+//var value = text.firstChild.nodeValue.trim().split('');
+//
+//var span = document.createElement('span');
+//var e = text.appendChild(span);
+//
+//var Newspan = document.createElement('span');
+//var l =
+//  var e = text.appendChild(span);
+//
+//
+//function letters(value) {
+//  for (var i = 0; i < arr.length; i++) {
+//
+//  }
+//}
+//console.log(letters())

@@ -1227,3 +1227,121 @@ sizedLetters('whatever', 'text')
 //  }
 //}
 //console.log(letters())
+
+//makeRequest('GET', 'http://jsonplaceholder.typicode.com/posts');
+//makeRequest('GET', 'https://yesno.wtf/api');
+
+
+function makeRequest(method, url, data) {
+
+  var xhr = new XMLHttpRequest();
+
+  xhr.open(method, url, true);
+
+  xhr.send(data);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState != 4) return;
+    if (xhr.status != 200) {
+      alert(xhr.status + ':' + xhr.statusText);
+    } else {
+      console.log(xhr.getAllResponseHeaders());
+      processAnswer(JSON.parse(xhr.responseText));
+    }
+  }
+}
+
+
+
+//var inputVal = document.getElementById('input').value;
+
+var input = document.getElementById('input');
+var table = document.getElementById('table');
+
+
+input.addEventListener('blur', function () {
+  var inputVal = input.value;
+  if (inputVal.trim().endsWith('?')) {
+    makeRequest('GET', 'https://yesno.wtf/api');
+  } else {
+    var questionRow = document.createElement('tr');
+    questionRow.innerHTML = `<td> ${input.value} </td><td>-</td><td>-</td>`
+    document.getElementById('table').appendChild(questionRow);
+  };
+});
+
+
+function processAnswer(answer) {
+  var imgSource = answer.image;
+  //  var image = document.getElementById('img').setAttribute('src', imgSource)
+
+  if (input.value !== '') {
+    var questionRow = document.createElement('tr');
+    questionRow.innerHTML = `<td> ${input.value} </td><td>${answer.answer}</td>`
+    document.getElementById('table').appendChild(questionRow);
+    var td = document.createElement('td');
+    table.appendChild(td);
+    td.innerHTML = '+';
+    td.onclick = function () {
+      var image = document.getElementById('img').setAttribute('src', imgSource);
+    }
+  } else {
+    return;
+  };
+
+
+  var paragraph = document.getElementById('par');
+  paragraph.innerHTML = '<p>' + answer.answer + '</p>';
+}
+
+function showImg() {
+
+}
+
+var myPromise = new Promise(function (resolve, reject) {
+  //  setTimeout(function () {
+  //    resolve([1, 2, 9, 3, 4, 5, 9, 6]);
+  //  }, 2000)
+});
+
+myPromise
+  .then(function (res) {
+    console.log(res);
+    return JSON.parse()
+  })
+  .then(function (parsed) {
+    console.log(parsed);
+  });
+//function pushToTable() {
+//  if (input.value !== '') {
+//    var questionRow = document.createElement('td');
+//    var questionText = document.createTextNode('input.value');
+//    questionRow.appendChild(questionText);
+//    document.getElementById('table').appendChild(questionRow);
+//  } else {
+//    return;
+//  };
+//}
+
+
+
+
+
+var myPromise = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    //resolve([1, 2, 9, 3, 4, 5, 9, 6]);
+  }, 1000)
+});
+
+myPromise
+  .then(function (res) {
+    console.log(res);
+    return res.sort()
+  })
+  .then(function (sorted) {
+    console.log(sorted);
+  });
+//  console.log('resolve:', res);
+//}, function (err) {
+//  console.log('reject', err);
+//});

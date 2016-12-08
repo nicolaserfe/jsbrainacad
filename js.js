@@ -1232,116 +1232,199 @@ sizedLetters('whatever', 'text')
 //makeRequest('GET', 'https://yesno.wtf/api');
 
 
-function makeRequest(method, url, data) {
-
-  var xhr = new XMLHttpRequest();
-
-  xhr.open(method, url, true);
-
-  xhr.send(data);
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState != 4) return;
-    if (xhr.status != 200) {
-      alert(xhr.status + ':' + xhr.statusText);
-    } else {
-      console.log(xhr.getAllResponseHeaders());
-      processAnswer(JSON.parse(xhr.responseText));
-    }
-  }
-}
-
-
-
-//var inputVal = document.getElementById('input').value;
-
-var input = document.getElementById('input');
-var table = document.getElementById('table');
-
-
-input.addEventListener('blur', function () {
-  var inputVal = input.value;
-  if (inputVal.trim().endsWith('?')) {
-    makeRequest('GET', 'https://yesno.wtf/api');
-  } else {
-    var questionRow = document.createElement('tr');
-    questionRow.innerHTML = `<td> ${input.value} </td><td>-</td><td>-</td>`
-    document.getElementById('table').appendChild(questionRow);
-  };
-});
-
-
-function processAnswer(answer) {
-  var imgSource = answer.image;
-  //  var image = document.getElementById('img').setAttribute('src', imgSource)
-
-  if (input.value !== '') {
-    var questionRow = document.createElement('tr');
-    questionRow.innerHTML = `<td> ${input.value} </td><td>${answer.answer}</td>`
-    document.getElementById('table').appendChild(questionRow);
-    var td = document.createElement('td');
-    table.appendChild(td);
-    td.innerHTML = '+';
-    td.onclick = function () {
-      var image = document.getElementById('img').setAttribute('src', imgSource);
-    }
-  } else {
-    return;
-  };
-
-
-  var paragraph = document.getElementById('par');
-  paragraph.innerHTML = '<p>' + answer.answer + '</p>';
-}
-
-function showImg() {
-
-}
-
-var myPromise = new Promise(function (resolve, reject) {
-  //  setTimeout(function () {
-  //    resolve([1, 2, 9, 3, 4, 5, 9, 6]);
-  //  }, 2000)
-});
-
-myPromise
-  .then(function (res) {
-    console.log(res);
-    return JSON.parse()
-  })
-  .then(function (parsed) {
-    console.log(parsed);
-  });
-//function pushToTable() {
-//  if (input.value !== '') {
-//    var questionRow = document.createElement('td');
-//    var questionText = document.createTextNode('input.value');
-//    questionRow.appendChild(questionText);
+//function makeRequest(method, url, data) {
+//
+//  var xhr = new XMLHttpRequest();
+//
+//  xhr.open(method, url, true);
+//
+//  xhr.send(data);
+//
+//  xhr.onreadystatechange = function () {
+//    if (xhr.readyState != 4) return;
+//    if (xhr.status != 200) {
+//      alert(xhr.status + ':' + xhr.statusText);
+//    } else {
+//      console.log(xhr.getAllResponseHeaders());
+//      processAnswer(JSON.parse(xhr.responseText));
+//    }
+//  }
+//}
+//
+//
+//
+////var inputVal = document.getElementById('input').value;
+//
+//var input = document.getElementById('input');
+//var table = document.getElementById('table');
+//
+//
+//input.addEventListener('blur', function () {
+//  var inputVal = input.value;
+//  if (inputVal.trim().endsWith('?')) {
+//    makeRequest('GET', 'https://yesno.wtf/api');
+//  } else {
+//    var questionRow = document.createElement('tr');
+//    questionRow.innerHTML = `<td> ${input.value} </td><td>-</td><td>-</td>`
 //    document.getElementById('table').appendChild(questionRow);
+//  };
+//});
+//
+
+//
+//function processAnswer(answer) {
+//  var imgSource = answer.image;
+//  //  var image = document.getElementById('img').setAttribute('src', imgSource)
+//
+//  if (input.value !== '') {
+//    var questionRow = document.createElement('tr');
+//    questionRow.innerHTML = `<td> ${input.value} </td><td>${answer.answer}</td>`
+//    document.getElementById('table').appendChild(questionRow);
+//    var td = document.createElement('td');
+//    table.appendChild(td);
+//    td.innerHTML = '+';
+//    td.onclick = function () {
+//      var image = document.getElementById('img').setAttribute('src', imgSource);
+//    }
 //  } else {
 //    return;
 //  };
+//
+//
+//  var paragraph = document.getElementById('par');
+//  paragraph.innerHTML = '<p>' + answer.answer + '</p>';
 //}
-
-
-
-
-
-var myPromise = new Promise(function (resolve, reject) {
-  setTimeout(function () {
-    //resolve([1, 2, 9, 3, 4, 5, 9, 6]);
-  }, 1000)
-});
-
-myPromise
-  .then(function (res) {
-    console.log(res);
-    return res.sort()
-  })
-  .then(function (sorted) {
-    console.log(sorted);
-  });
-//  console.log('resolve:', res);
+//
+//function showImg() {
+//
+//}
+//
+//var myPromise = new Promise(function (resolve, reject) {
+//  //  setTimeout(function () {
+//  //    resolve([1, 2, 9, 3, 4, 5, 9, 6]);
+//  //  }, 2000)
+//});
+//
+//myPromise
+//  .then(function (res) {
+//    console.log(res);
+//    return JSON.parse()
+//  })
+//  .then(function (parsed) {
+//    console.log(parsed);
+//  });
+////function pushToTable() {
+////  if (input.value !== '') {
+////    var questionRow = document.createElement('td');
+////    var questionText = document.createTextNode('input.value');
+////    questionRow.appendChild(questionText);
+////    document.getElementById('table').appendChild(questionRow);
+////  } else {
+////    return;
+////  };
+////}
+//
+//
+//
+//
+//
+//var myPromise = new Promise(function (resolve, reject) {
+//  setTimeout(function () {
+//    //resolve([1, 2, 9, 3, 4, 5, 9, 6]);
+//  }, 1000)
+//});
+//
+//myPromise
+//  .then(function (res) {
+//    console.log(res);
+//    return res.sort()
+//  })
+//  .then(function (sorted) {
+//    console.log(sorted);
+//  });
+////  console.log('resolve:', res);
 //}, function (err) {
 //  console.log('reject', err);
 //});
+
+//////////////////////////////////////////////_________08 december PROMISE 
+
+//var promise = new Promise(function (resolve, reject) {
+//  //resolve(42);
+//  reject('error');
+//});
+//promise
+//
+//  .then(function (data) {
+//    console.log(data);
+//    return data * 2;
+//  })
+////  .then(function (data) {
+////    console.log(data);
+////    return data / 5;
+////  })
+////  .then(function (data) {
+////    console.log(data);
+////  });
+//.then (function(err){
+//  console.log(err)
+//})
+//.catch (function(err){ ////// the end of function - catch errors
+//  console.log(err);
+//})
+//
+
+
+function request(url) {
+  return new Promise(function (resolve, reject) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', url, true);
+
+    xhr.send();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState != 4) return;
+      if (xhr.status != 200) {
+        reject(xhr.responseText);
+      } else {
+        resolve(xhr.responseText);
+      }
+    }
+  });
+}
+
+
+
+
+var videoCnt = document.getElementById('videos');
+var iframeSrc = document.getElementById('iframe');
+var inputId = document.getElementById('q').value;
+var youTube = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=cats&type=video&videoCaption=closedCaption&key=';
+var api_key = 'AIzaSyCbidTxNRgnT4PyO_QYiOm5FRySEKOQG0w';
+
+request(youTube + api_key)
+  .then(function (data) {
+    return JSON.parse(data);
+  })
+  .then(function (data) {
+    data.innerHTML = '';
+    data.items.forEach(function (el) {
+      var snippet = document.createElement('img');
+      snippet.setAttribute('src', el.snippet.thumbnails.default.url);
+      snippet.addEventListener('click', function () {
+        iframeSrc.src = 'https://www.youtube.com/embed/' + el.id.videoId;
+      })
+      videoCnt.appendChild(snippet);
+    });
+  })
+  .then(function (data) {
+
+
+  })
+
+
+
+.catch(function (err) {
+  console.log(err);
+})

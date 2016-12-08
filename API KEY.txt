@@ -1,0 +1,3 @@
+AIzaSyCbidTxNRgnT4PyO_QYiOm5FRySEKOQG0w
+
+https://www.googleapis.com/youtube/v3/search?part=snippet&q=YouTube+Data+API&type=video&videoCaption=closedCaption&key=

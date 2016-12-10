@@ -1428,3 +1428,167 @@ request(youTube + api_key)
 .catch(function (err) {
   console.log(err);
 })
+
+
+//var elem = [1, 4, 'r', 7, 'g', 'u', '*'];
+
+function returnNumbers() {
+  var args = Array.prototype.slice.call(arguments)
+  var nums = args.filter(function (num) {
+    return Number.isFinite(num)
+  });
+  return nums.reduce(function (prev, curr) {
+    return prev + curr;
+  })
+}
+console.log(returnNumbers(1, 4, 'r', 7, 'g', 'u', '*'));
+/////////////////////same with arrow functions
+var getNumbers = (...arguments) =>
+  arguments
+  .filter(Number.isFinite) // = .filter(num => Number.isFinite(num))
+  .reduce((prev, curr) => prev + curr); ///can do it in one string without spaces
+
+console.log(getNumbers(1, 4, 'r', 7, 'g', 'u', '*'));
+
+
+
+//var arrNum = elem.filter(function (num) {
+//  return Number.isFinite(num)
+//})
+//
+//var res = arrNum.reduce(function (prev, curr) {
+//  return prev + curr;
+//})
+
+
+//////////////////////////////////////////////////////////                 ARROW FUNCTIONS       /////////////////
+
+var triple = function triple(number) {
+  return number * 3
+}
+var triple = number => number * 3; // same shit 
+
+//////////////////////
+
+var timer = {
+  seconds: 0,
+  start() {
+    setInterval(() => {
+      this.seconds++
+    }, 1000)
+  }
+}
+timer.start()
+
+setTimeout(function () {
+  // console.log(timer.seconds)
+}, 3500)
+
+
+///////////////////////
+
+//var character = {
+//  name: 'Bruce',
+//  pseudonym: 'Batman',
+//  metadata: {
+//    age: 34,
+//    gender: 'male'
+//  }
+//}
+//
+//var {
+//  name: FistName,
+//  pseudonym
+//} = character;
+//
+//console.log(FistName, pseudonym);
+//var {
+//  metadata: {
+//    gender
+//  }
+//} = character;
+//console.log(gender);
+//
+//
+//var arrTestDestructuring = [1, 2, 3, 4, 5, 6];
+//var [first, second, , , fifth] = arrTestDestructuring;
+//console.log(first, second, fifth);
+
+
+
+var first = 1;
+var second = 2;
+var inter = first;
+first = second;
+second = inter;
+////////////////  same with dectructuring
+[first, second] = [second, first]
+
+
+function powerOf(base, exponent = 2) {
+  return Math.pow(base, exponent)
+}
+////////////        same with dectructuring
+var pow = (base, exponent = 2) => Math.pow(base, exponent);
+//console.log(pow(2));
+//console.log(pow(2, 4));
+
+function carFactory({
+  brand = 'smart', year = 2000
+}) {
+  console.log(brand);
+  console.log(year);
+
+}
+//carFactory() //undefind
+
+function carFactory({
+  brand = 'smart', year = 2000
+} = {}) { // set default obj
+  console.log(brand);
+  console.log(year);
+}
+
+carFactory() // defalt properties smart 2000
+
+
+function cast() {
+  return [...arguments]
+}
+cast('a', 'b', 'c') //['a', 'b','c']
+  //////////////////////////////////same with rest parameters
+var cast = (...arguments) => arguments;
+var res = cast('a', 'b', 'c')
+console.log(res)
+
+
+var getNumbers = (...arguments) =>
+  arguments
+  .filter(Number.isFinite) // = .filter(num => Number.isFinite(num))
+  .reduce((prev, curr) => prev + curr);
+
+console.log(getNumbers(1, 4, 'r', 7, 'g', 'u', '*'));
+
+
+
+
+var a = 'a'; {
+  var b = 'b';
+  let c = 'c';
+  console.log(c); // тут доступна за границами - нет
+}
+console.log(b);
+//console.log(c); /// c is not defind пушо не доступна в этой области, только вннутри блока
+
+const r = 1;
+r = 2;
+//console.log(r);// cannot
+
+var arr = [2, -1, 6, 8, 9];
+Math.min(...arr) //мас работает только со списком, и чтобы работать с массивом можем использовать рест параметерс
+  //////////////////////////////random 
+function random({
+  min = 1, max = 10
+} = {}) {
+  return Math.floor(Math.random() * (max - min) + min)
+}
